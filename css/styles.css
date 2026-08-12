@@ -126,8 +126,8 @@ a{ color:inherit; text-decoration:none; }
 .fan-kicker{ position:absolute; z-index:2; left:18px; bottom:16px; font-family:var(--font-mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; text-shadow:0 2px 8px rgba(0,0,0,.6); }
 
 /* FLYERS (cyl) */
-.cyl-scene{ --rz:300px; --sc:.82; height:340px; width:190px; margin:clamp(60px,9vw,140px) auto;
-  perspective:1300px; transform:scale(var(--sc)) rotateX(-6deg); transform-style:preserve-3d;
+.cyl-scene{ --rz:300px; --sc:.82; --persp:1300px; height:340px; width:190px; margin:clamp(60px,9vw,140px) auto;
+  perspective:var(--persp); transform:scale(var(--sc)) rotateX(-6deg); transform-style:preserve-3d;
   cursor:grab; touch-action:pan-y; -webkit-user-select:none; user-select:none; }
 .cyl-scene.dragging{ cursor:grabbing; }
 .cyl-ring{ height:100%; width:100%; position:relative; transform-style:preserve-3d; will-change:transform; }
@@ -219,18 +219,20 @@ a{ color:inherit; text-decoration:none; }
 
 /* RESPONSIVE */
 @media (max-width:1024px){ .sec__side{ display:none; } }
-@media (max-width:860px){ .cyl-scene{ --rz:230px; --sc:.7; } }
+@media (max-width:860px){ .cyl-scene{ --rz:230px; --sc:.7; --persp:1000px; } }
 @media (max-width:760px){
   .nav__links{ display:none; }
   .date{ grid-template-columns:auto 1fr; row-gap:2px; }
   .date__c, .date__s{ grid-column:2; justify-self:start; }
   .gallery{ height:170vh; }
   .hero__type-track span{ font-size:20vw; }
-  .hero__figure{ height:min(80vh,900px); }
-  .bio-full__content{ justify-items:start; text-align:left; padding-top:clamp(60px,20vw,100px); }
-  .bio-full__bg{ object-position:35% center; }
+  .hero__figure{ height:min(58vh,560px); }
+  .bio-full{ min-height:auto; display:block; }
+  .bio-full__bg{ position:relative; inset:auto; width:100%; height:46vh; object-position:8% 25%; }
+  .bio-full__scrim{ position:relative; inset:auto; height:60px; background:linear-gradient(180deg, transparent, var(--void)); margin-top:-60px; }
+  .bio-full__content{ position:relative; padding-top:clamp(28px,6vw,44px); justify-items:start; text-align:left; }
 }
-@media (max-width:480px){ .cyl-scene{ --rz:200px; --sc:.58; } }
+@media (max-width:480px){ .cyl-scene{ --rz:200px; --sc:.58; --persp:860px; } .hero__figure{ height:min(50vh,460px); } }
 
 /* REDUCE MOTION */
 @media (prefers-reduced-motion:reduce){
