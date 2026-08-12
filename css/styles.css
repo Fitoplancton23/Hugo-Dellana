@@ -219,7 +219,7 @@ a{ color:inherit; text-decoration:none; }
 
 /* RESPONSIVE */
 @media (max-width:1024px){ .sec__side{ display:none; } }
-@media (max-width:860px){ .cyl-scene{ --rz:230px; --sc:.7; --persp:800px; } }
+@media (max-width:860px){ .cyl-scene{ --rz:230px; --sc:.7; --persp:200px; } }
 @media (max-width:760px){
   .nav__links{ display:none; }
   .date{ grid-template-columns:auto 1fr; row-gap:2px; }
