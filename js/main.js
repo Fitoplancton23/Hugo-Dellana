@@ -125,17 +125,15 @@
     if (html) grid.innerHTML = html;
   }
 
-  function renderFechas(list) {
-    var ul = document.querySelector('.dates__list');
-    if (!ul || !list) return;
-    ul.innerHTML = list.map(function (d) {
-      d = d || {};
-      return '<li class="date">' +
-             '<span class="date__d">' + esc(d.fecha) + '</span>' +
-             '<span class="date__v">' + esc(d.evento) + '</span>' +
-             '<span class="date__c">' + esc(d.ciudad) + '</span>' +
-             '<span class="date__s">' + esc(d.estado) + '</span></li>';
-    }).join('');
+  function renderProxima(d) {
+    var box = document.getElementById('nextDate');
+    if (!box || !d) return;
+    box.innerHTML =
+      '<div class="next-date__row">' +
+      '<span class="next-date__d">' + esc(d.fecha) + '</span>' +
+      '<span class="next-date__v">' + esc(d.evento) + '</span>' +
+      '<span class="next-date__c">' + esc(d.ciudad) + '</span>' +
+      '<span class="next-date__s">' + esc(d.estado) + '</span></div>';
   }
 
   /* =========================================================
@@ -281,7 +279,8 @@
         if (d.bio) renderBio(d.bio);
         if (d.videos) renderVideos(d.videos);
         if (d.galeria) renderGaleria(d.galeria);
-        if (d.fechas) renderFechas(d.fechas);
+        var prox = d.proxima || (d.fechas && d.fechas[0]);
+        if (prox) renderProxima(prox);
       })
       .catch(function () { /* fallback: se queda el HTML estático */ })
       .then(function () { wireInteractive(); });

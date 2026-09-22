@@ -328,3 +328,22 @@ body.no-scroll{ overflow:hidden; }
 .yt:hover .yt__play::before{ border-left-color:var(--void); }
 .yt iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; z-index:3; border-radius:10px; }
 @media (max-width:760px){ .yt__play{ width:58px; height:58px; } .yt__play::before{ border-width:10px 0 10px 16px; } }
+
+/* =========================================================
+   PRÓXIMA FECHA (una sola) + remate
+   ========================================================= */
+.next-date{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.next-date__row{ display:grid; grid-template-columns:120px 1fr 1fr auto; align-items:center;
+  gap:clamp(12px,2.5vw,32px); padding:clamp(22px,3.4vw,38px) 0; }
+.next-date__d{ font-family:var(--font-mono); font-size:clamp(15px,1.7vw,21px); color:var(--signal); }
+.next-date__v{ font-family:var(--font-display); font-weight:800; font-stretch:105%;
+  font-size:clamp(22px,3.4vw,44px); line-height:1; text-transform:uppercase; letter-spacing:-.01em; }
+.next-date__c{ color:var(--ash); font-size:clamp(14px,1.15vw,16px); }
+.next-date__s{ font-family:var(--font-mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ash); }
+.next-date__tag{ margin:clamp(26px,4vw,44px) 0 0; font-family:var(--font-display); font-weight:900;
+  font-stretch:115%; font-size:clamp(30px,6vw,72px); line-height:.95; letter-spacing:-.02em;
+  text-transform:uppercase; color:var(--bone); }
+@media (max-width:760px){
+  .next-date__row{ grid-template-columns:auto 1fr; row-gap:4px; }
+  .next-date__c, .next-date__s{ grid-column:2; justify-self:start; }
+}

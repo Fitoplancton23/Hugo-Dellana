@@ -4,28 +4,107 @@
     "Mis sets están pensados para warm up activos, medianoche y contextos de club donde el ritmo es protagonista y la conexión con el público es inmediata. Influenciado por artistas como Cuartero, Cloonee y Wade, mi sonido se apoya en percusiones marcadas, bajos definidos y un carácter festivo, vibrante y sin vueltas, pensado para mantener la energía en alto y el movimiento constante."
   ],
   "videos": [
-    { "title": "", "youtube": "N1QaXsJP7ck" }
+    {
+      "title": "",
+      "youtube": "N1QaXsJP7ck"
+    }
   ],
   "galeria": [
-    { "src": "assets/photos/01.jpg", "alt": "Hugo Dellana en vivo — 01", "w": 900, "h": 1350 },
-    { "src": "assets/photos/02.jpg", "alt": "Hugo Dellana en vivo — 02", "w": 900, "h": 1350 },
-    { "src": "assets/photos/pic_01.jpeg", "alt": "Hugo Dellana en vivo — 03", "w": 1280, "h": 852 },
-    { "src": "assets/photos/03.jpg", "alt": "Hugo Dellana en vivo — 04", "w": 900, "h": 1200 },
-    { "src": "assets/photos/04.jpg", "alt": "Hugo Dellana en vivo — 05", "w": 900, "h": 1200 },
-    { "src": "assets/photos/pic_02.jpeg", "alt": "Hugo Dellana en vivo — 06", "w": 1280, "h": 852 },
-    { "src": "assets/photos/05.jpg", "alt": "Hugo Dellana en vivo — 07", "w": 900, "h": 1200 },
-    { "src": "assets/photos/06.jpg", "alt": "Hugo Dellana en vivo — 08", "w": 900, "h": 1200 },
-    { "src": "assets/photos/pic_03.jpeg", "alt": "Hugo Dellana en vivo — 09", "w": 1280, "h": 852 },
-    { "src": "assets/photos/07.jpg", "alt": "Hugo Dellana en vivo — 10", "w": 900, "h": 1350 },
-    { "src": "assets/photos/08.jpg", "alt": "Hugo Dellana en vivo — 11", "w": 900, "h": 1509 },
-    { "src": "assets/photos/pic_04.jpeg", "alt": "Hugo Dellana en vivo — 12", "w": 1280, "h": 852 },
-    { "src": "assets/photos/09.jpg", "alt": "Hugo Dellana en vivo — 13", "w": 900, "h": 1200 },
-    { "src": "assets/photos/10.jpg", "alt": "Hugo Dellana en vivo — 14", "w": 900, "h": 1200 },
-    { "src": "assets/photos/11.jpg", "alt": "Hugo Dellana en vivo — 15", "w": 900, "h": 1600 }
+    {
+      "src": "assets/photos/01.jpg",
+      "alt": "Hugo Dellana en vivo — 01",
+      "w": 900,
+      "h": 1350
+    },
+    {
+      "src": "assets/photos/02.jpg",
+      "alt": "Hugo Dellana en vivo — 02",
+      "w": 900,
+      "h": 1350
+    },
+    {
+      "src": "assets/photos/pic_01.jpeg",
+      "alt": "Hugo Dellana en vivo — 03",
+      "w": 1280,
+      "h": 852
+    },
+    {
+      "src": "assets/photos/03.jpg",
+      "alt": "Hugo Dellana en vivo — 04",
+      "w": 900,
+      "h": 1200
+    },
+    {
+      "src": "assets/photos/04.jpg",
+      "alt": "Hugo Dellana en vivo — 05",
+      "w": 900,
+      "h": 1200
+    },
+    {
+      "src": "assets/photos/pic_02.jpeg",
+      "alt": "Hugo Dellana en vivo — 06",
+      "w": 1280,
+      "h": 852
+    },
+    {
+      "src": "assets/photos/05.jpg",
+      "alt": "Hugo Dellana en vivo — 07",
+      "w": 900,
+      "h": 1200
+    },
+    {
+      "src": "assets/photos/06.jpg",
+      "alt": "Hugo Dellana en vivo — 08",
+      "w": 900,
+      "h": 1200
+    },
+    {
+      "src": "assets/photos/pic_03.jpeg",
+      "alt": "Hugo Dellana en vivo — 09",
+      "w": 1280,
+      "h": 852
+    },
+    {
+      "src": "assets/photos/07.jpg",
+      "alt": "Hugo Dellana en vivo — 10",
+      "w": 900,
+      "h": 1350
+    },
+    {
+      "src": "assets/photos/08.jpg",
+      "alt": "Hugo Dellana en vivo — 11",
+      "w": 900,
+      "h": 1509
+    },
+    {
+      "src": "assets/photos/pic_04.jpeg",
+      "alt": "Hugo Dellana en vivo — 12",
+      "w": 1280,
+      "h": 852
+    },
+    {
+      "src": "assets/photos/09.jpg",
+      "alt": "Hugo Dellana en vivo — 13",
+      "w": 900,
+      "h": 1200
+    },
+    {
+      "src": "assets/photos/10.jpg",
+      "alt": "Hugo Dellana en vivo — 14",
+      "w": 900,
+      "h": 1200
+    },
+    {
+      "src": "assets/photos/11.jpg",
+      "alt": "Hugo Dellana en vivo — 15",
+      "w": 900,
+      "h": 1600
+    }
   ],
-  "fechas": [
-    { "fecha": "[DD.MM]", "evento": "[EJEMPLO]", "ciudad": "[Ciudad]", "estado": "Entradas" },
-    { "fecha": "[DD.MM]", "evento": "[EJEMPLO]", "ciudad": "[Ciudad]", "estado": "Entradas" },
-    { "fecha": "[DD.MM]", "evento": "[EJEMPLO]", "ciudad": "[Ciudad]", "estado": "Sold out" }
-  ]
+  "proxima": {
+    "fecha": "[DD.MM]",
+    "evento": "[Nombre del evento]",
+    "ciudad": "[Ciudad]",
+    "estado": "Entradas"
+  }
 }

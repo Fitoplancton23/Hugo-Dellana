@@ -56,11 +56,9 @@ collections:
               - { label: "Ancho en px (opcional)", name: w, widget: number, required: false, value_type: int }
               - { label: "Alto en px (opcional)", name: h, widget: number, required: false, value_type: int }
 
-          - label: "Próximas fechas"
-            name: fechas
-            label_singular: "Fecha"
-            widget: list
-            summary: "{{fields.fecha}} — {{fields.evento}}"
+          - label: "Próxima fecha"
+            name: proxima
+            widget: object
             fields:
               - { label: "Fecha (DD.MM)", name: fecha, widget: string, required: false }
               - { label: "Evento", name: evento, widget: string, required: false }
