@@ -23,6 +23,7 @@
     <div class="nav__links">
       <a href="#bio">Bio</a>
       <a href="#sets">Sets</a>
+      <a href="#videos">Videos</a>
       <a href="#galeria">Galería</a>
       <a href="#fechas">Fechas</a>
     </div>
@@ -105,7 +106,23 @@
     </div>
   </section>
 
-  
+
+  <!-- ============ VIDEOS ============ -->
+  <section class="sec videos" id="videos" data-reveal>
+    <span class="sec__side" aria-hidden="true">Watch</span>
+    <div class="sec__head">
+      <span class="sec__index">03</span>
+      <h2 class="sec__title">Videos</h2>
+    </div>
+    <div class="video-grid" id="videoGrid">
+      <div class="yt" data-id="N1QaXsJP7ck">
+        <button class="yt__btn" type="button" aria-label="Reproducir video">
+          <span class="yt__play" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FLYERS / TRAYECTORIA (carrusel 3D) ============ -->
   <section class="sec events" id="flyers" data-reveal>
     <span class="sec__side" aria-hidden="true">Shows</span>
@@ -154,7 +171,7 @@
   
   <!-- ============ EQUIPO ============ -->
   <section class="sec gear" id="equipo" data-reveal>
-    <div class="sec__head"><span class="sec__index">06</span><h2 class="sec__title">Equipos</h2></div>
+    <div class="sec__head"><span class="sec__index">05</span><h2 class="sec__title">Equipos</h2></div>
     
     <div class="rig">
       <img class="rig__base" src="assets/Equipos.jpg" alt="Rig técnico: monitores, CDJs, mixer y sound card Pioneer DJ">
@@ -183,7 +200,7 @@
     <section class="sec dates" id="fechas" data-reveal>
       <span class="sec__side" aria-hidden="true">Agenda</span>
       <div class="sec__head">
-        <span class="sec__index">05</span>
+        <span class="sec__index">06</span>
         <h2 class="sec__title">Fechas</h2>
       </div>
       <ul class="dates__list">
@@ -194,78 +211,97 @@
       <p class="dates__note"><em>[Cargá tus próximas fechas acá, o borrá la sección si no tenés confirmadas.]</em></p>
     </section>
     
-    <!-- ============ GALERÍA (carrusel abanico) ============ -->
-    <section class="gallery" id="galeria">
-      <div class="gallery__pin">
-        <div class="sec__head gallery__head">
-          <span class="sec__index">03</span>
-          <span class="hint">Scrolleá</span>
-        </div>
-        <div class="fan-stage">
-          <div class="fan-track">
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/01.jpg" alt="Hugo Dellana en vivo — 01" loading="lazy">
-              </div>
-            </figure>
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/02.jpg" alt="Hugo Dellana en vivo — 02" loading="lazy">
-              </div>
-            </figure>
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/03.jpg" alt="Hugo Dellana en vivo — 03" loading="lazy">
-              </div>
-            </figure>
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/04.jpg" alt="Hugo Dellana en vivo — 04" loading="lazy">
-              </div>
-            </figure>
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/05.jpg" alt="Hugo Dellana en vivo — 05" loading="lazy">
-              </div>
-            </figure>
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/06.jpg" alt="Hugo Dellana en vivo — 06" loading="lazy">
-              </div>
-            </figure>
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/07.jpg" alt="Hugo Dellana en vivo — 07" loading="lazy">
-              </div>
-            </figure>
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/08.jpg" alt="Hugo Dellana en vivo — 08" loading="lazy">
-              </div>
-            </figure>
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/09.jpg" alt="Hugo Dellana en vivo — 09" loading="lazy">
-              </div>
-            </figure>
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/10.jpg" alt="Hugo Dellana en vivo — 10" loading="lazy">
-              </div>
-            </figure>
-            <figure class="fan-item">
-              <div class="fan-box">
-                <img src="assets/photos/11.jpg" alt="Hugo Dellana en vivo — 11" loading="lazy">
-              </div>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-  
+    <!-- ============ GALERÍA (mosaico + lightbox) ============ -->
+  <section class="sec gallery2" id="galeria" data-reveal>
+    <span class="sec__side" aria-hidden="true">Live</span>
+    <div class="sec__head">
+      <span class="sec__index">07</span>
+      <h2 class="sec__title">Galería</h2>
+      <span class="hint">Tocá una foto para ampliar</span>
+    </div>
+    <div class="grid-gallery" id="gridGallery">
+        <button class="gitem" type="button" data-full="assets/photos/01.jpg" aria-label="Ampliar foto 1">
+          <img src="assets/photos/01.jpg" alt="Hugo Dellana en vivo — 01" loading="lazy" width="900" height="1350">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/02.jpg" aria-label="Ampliar foto 2">
+          <img src="assets/photos/02.jpg" alt="Hugo Dellana en vivo — 02" loading="lazy" width="900" height="1350">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/pic_01.jpeg" aria-label="Ampliar foto 3">
+          <img src="assets/photos/pic_01.jpeg" alt="Hugo Dellana en vivo — 03" loading="lazy" width="1280" height="852">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/03.jpg" aria-label="Ampliar foto 4">
+          <img src="assets/photos/03.jpg" alt="Hugo Dellana en vivo — 04" loading="lazy" width="900" height="1200">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/04.jpg" aria-label="Ampliar foto 5">
+          <img src="assets/photos/04.jpg" alt="Hugo Dellana en vivo — 05" loading="lazy" width="900" height="1200">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/pic_02.jpeg" aria-label="Ampliar foto 6">
+          <img src="assets/photos/pic_02.jpeg" alt="Hugo Dellana en vivo — 06" loading="lazy" width="1280" height="852">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/05.jpg" aria-label="Ampliar foto 7">
+          <img src="assets/photos/05.jpg" alt="Hugo Dellana en vivo — 07" loading="lazy" width="900" height="1200">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/06.jpg" aria-label="Ampliar foto 8">
+          <img src="assets/photos/06.jpg" alt="Hugo Dellana en vivo — 08" loading="lazy" width="900" height="1200">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/pic_03.jpeg" aria-label="Ampliar foto 9">
+          <img src="assets/photos/pic_03.jpeg" alt="Hugo Dellana en vivo — 09" loading="lazy" width="1280" height="852">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/07.jpg" aria-label="Ampliar foto 10">
+          <img src="assets/photos/07.jpg" alt="Hugo Dellana en vivo — 10" loading="lazy" width="900" height="1350">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/08.jpg" aria-label="Ampliar foto 11">
+          <img src="assets/photos/08.jpg" alt="Hugo Dellana en vivo — 11" loading="lazy" width="900" height="1509">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/pic_04.jpeg" aria-label="Ampliar foto 12">
+          <img src="assets/photos/pic_04.jpeg" alt="Hugo Dellana en vivo — 12" loading="lazy" width="1280" height="852">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/09.jpg" aria-label="Ampliar foto 13">
+          <img src="assets/photos/09.jpg" alt="Hugo Dellana en vivo — 13" loading="lazy" width="900" height="1200">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/10.jpg" aria-label="Ampliar foto 14">
+          <img src="assets/photos/10.jpg" alt="Hugo Dellana en vivo — 14" loading="lazy" width="900" height="1200">
+        </button>
+        <button class="gitem" type="button" data-full="assets/photos/11.jpg" aria-label="Ampliar foto 15">
+          <img src="assets/photos/11.jpg" alt="Hugo Dellana en vivo — 15" loading="lazy" width="900" height="1600">
+        </button>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <button class="lightbox__close" id="lbClose" type="button" aria-label="Cerrar">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" type="button" aria-label="Anterior">‹</button>
+    <figure class="lightbox__stage">
+      <img class="lightbox__img" id="lbImg" src="" alt="">
+      <figcaption class="lightbox__cap" id="lbCap"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" type="button" aria-label="Siguiente">›</button>
+  </div>
+
+  <!-- ============ MATERIAL PARA DIFUSIÓN ============ -->
+  <section class="sec promo" id="material" data-reveal>
+    <span class="sec__side" aria-hidden="true">Booking</span>
+    <div class="sec__head">
+      <span class="sec__index">08</span>
+      <h2 class="sec__title">Material</h2>
+    </div>
+    <div class="promo__body">
+      <p class="promo__lead">Fotos en alta, flyers, logos y press kit descargable — todo listo para prensa, bookers y organizadores.</p>
+      <a class="promo__btn" href="https://drive.google.com/drive/folders/1rver3G0BdQI0wbRJdbzgGkvYuAo64LNh?usp=sharing" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <path d="M12 3v12m0 0 4-4m-4 4-4-4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke-linecap="round"/>
+        </svg>
+        <span>Material para difusión</span>
+      </a>
+      <p class="promo__hint">Se abre en Google Drive</p>
+    </div>
+  </section>
+
   <!-- ============ BOOKING / CONTACTO ============ -->
   <section class="sec booking" id="booking" data-reveal>
-    <span class="sec__index sec__index--center">07</span>
+    <span class="sec__index sec__index--center">09</span>
     <p class="booking__eyebrow">Contratación &amp; prensa</p>
     <a class="booking__mail" href="mailto:hugodellana07@gmail.com">hugodellana07@gmail.com</a>
     <ul class="booking__social">

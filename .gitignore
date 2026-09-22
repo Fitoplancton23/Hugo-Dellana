@@ -1,0 +1,4 @@
+# Carpeta de salida temporal generada por Claude — no forma parte del sitio
+Claude outputs/
+.DS_Store
+Thumbs.db

@@ -240,3 +240,91 @@ a{ color:inherit; text-decoration:none; }
   [data-reveal]{ opacity:1; transform:none; }
   .reveal-line{ opacity:1; transform:none; }
 }
+
+/* =========================================================
+   GALERÍA (mosaico masonry + lightbox)   ·  reemplaza al fan
+   ========================================================= */
+.gallery2{ overflow:hidden; }
+.grid-gallery{ columns:3 260px; column-gap:16px; }
+.gitem{ display:block; width:100%; margin:0 0 16px; padding:0; border:0; background:#000;
+  border-radius:8px; overflow:hidden; position:relative; cursor:zoom-in; break-inside:avoid;
+  box-shadow:0 10px 40px rgba(0,0,0,.4); transition:transform .4s var(--ease), box-shadow .4s var(--ease); }
+.gitem img{ width:100%; height:auto; display:block; filter:grayscale(.18) contrast(1.02);
+  transition:transform .6s var(--ease), filter .6s var(--ease); }
+.gitem::after{ content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, rgba(0,0,0,0) 58%, rgba(0,0,0,.4));
+  opacity:0; transition:opacity .4s var(--ease); }
+.gitem:hover{ transform:translateY(-4px); box-shadow:0 18px 60px rgba(0,0,0,.55); }
+.gitem:hover img{ transform:scale(1.045); filter:grayscale(0) contrast(1.05); }
+.gitem:hover::after{ opacity:1; }
+.gitem:focus-visible{ outline:2px solid var(--signal); outline-offset:3px; }
+
+.lightbox{ position:fixed; inset:0; z-index:50; display:flex; align-items:center; justify-content:center;
+  padding:clamp(12px,4vw,48px); background:rgba(6,6,7,.94); backdrop-filter:blur(6px);
+  opacity:0; visibility:hidden; transition:opacity .3s var(--ease), visibility .3s var(--ease); }
+.lightbox.open{ opacity:1; visibility:visible; }
+.lightbox__stage{ margin:0; max-width:min(94vw,1200px); display:flex; flex-direction:column; align-items:center; gap:14px; }
+.lightbox__img{ max-width:100%; max-height:82vh; width:auto; height:auto; object-fit:contain; border-radius:6px;
+  box-shadow:0 30px 90px rgba(0,0,0,.6); transform:scale(.97); transition:transform .3s var(--ease); }
+.lightbox.open .lightbox__img{ transform:scale(1); }
+.lightbox__cap{ font-family:var(--font-mono); font-size:12px; letter-spacing:.08em; color:var(--ash); text-transform:uppercase; }
+.lightbox__close, .lightbox__nav{ appearance:none; -webkit-appearance:none; background:rgba(255,255,255,.06);
+  border:1px solid var(--line); color:var(--bone); width:52px; height:52px; border-radius:100px;
+  font-size:24px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  z-index:2; transition:background .25s, border-color .25s, transform .25s, color .25s; }
+.lightbox__close:hover, .lightbox__nav:hover{ background:var(--bone); color:var(--void); border-color:var(--bone); }
+.lightbox__close{ position:fixed; top:clamp(14px,2.5vw,26px); right:clamp(14px,2.5vw,26px); }
+.lightbox__nav{ position:fixed; top:50%; transform:translateY(-50%); }
+.lightbox__nav--prev{ left:clamp(10px,2vw,28px); }
+.lightbox__nav--next{ right:clamp(10px,2vw,28px); }
+.lightbox__nav:hover{ transform:translateY(-50%) scale(1.06); }
+body.no-scroll{ overflow:hidden; }
+
+/* MATERIAL PARA DIFUSIÓN */
+.promo{ text-align:center; }
+.promo__body{ max-width:56ch; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:clamp(20px,3vw,30px); }
+.promo__lead{ color:var(--bone); opacity:.92; font-size:clamp(15px,1.4vw,19px); line-height:1.7; margin:0; }
+.promo__btn{ display:inline-flex; align-items:center; gap:.65em; font-family:var(--font-mono); font-weight:700;
+  font-size:clamp(14px,1.5vw,17px); letter-spacing:.06em; text-transform:uppercase; color:var(--void);
+  background:var(--bone); border:1px solid var(--bone); padding:clamp(14px,1.6vw,18px) clamp(24px,3vw,38px);
+  border-radius:100px; transition:transform .25s var(--ease), background .25s, color .25s, box-shadow .25s; }
+.promo__btn svg{ width:20px; height:20px; flex-shrink:0; }
+.promo__btn:hover{ background:transparent; color:var(--bone); transform:translateY(-2px); box-shadow:0 14px 44px rgba(0,0,0,.45); }
+.promo__hint{ font-family:var(--font-mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ash); margin:0; }
+
+/* GALERÍA — responsive */
+@media (max-width:760px){
+  .grid-gallery{ columns:2 150px; column-gap:10px; }
+  .gitem{ margin-bottom:10px; }
+  .lightbox__nav{ width:44px; height:44px; font-size:20px; }
+  .lightbox__close{ width:44px; height:44px; font-size:20px; }
+}
+
+/* REDUCE MOTION — galería */
+@media (prefers-reduced-motion:reduce){
+  .gitem, .gitem img, .lightbox, .lightbox__img{ transition-duration:.001ms !important; }
+}
+
+/* =========================================================
+   VIDEOS (embeds de YouTube con carga diferida / facade)
+   ========================================================= */
+.video-grid{ display:grid; gap:clamp(16px,2vw,26px);
+  grid-template-columns:repeat(auto-fit, minmax(min(100%,440px),1fr)); }
+.yt{ position:relative; aspect-ratio:16/9; border-radius:10px; overflow:hidden;
+  background:#0d0d0f center/cover no-repeat; cursor:pointer; box-shadow:0 12px 44px rgba(0,0,0,.45); }
+.yt::after{ content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.5)); transition:opacity .3s var(--ease); }
+.yt:hover::after{ opacity:.7; }
+.yt.playing{ cursor:default; }
+.yt.playing::after{ display:none; }
+.yt__btn{ position:absolute; inset:0; z-index:2; display:flex; align-items:center; justify-content:center;
+  background:none; border:0; cursor:pointer; }
+.yt__play{ position:relative; display:block; width:74px; height:74px; border-radius:100px;
+  background:rgba(11,11,12,.55); border:1px solid rgba(255,255,255,.5); backdrop-filter:blur(4px);
+  transition:transform .25s var(--ease), background .25s, border-color .25s; }
+.yt__play::before{ content:""; position:absolute; top:50%; left:53%; transform:translate(-50%,-50%);
+  border-style:solid; border-width:12px 0 12px 20px; border-color:transparent transparent transparent var(--bone); }
+.yt:hover .yt__play{ transform:scale(1.08); background:var(--signal); border-color:var(--signal); }
+.yt:hover .yt__play::before{ border-left-color:var(--void); }
+.yt iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; z-index:3; border-radius:10px; }
+@media (max-width:760px){ .yt__play{ width:58px; height:58px; } .yt__play::before{ border-width:10px 0 10px 16px; } }

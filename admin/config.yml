@@ -1,0 +1,68 @@
+# =========================================================
+#  Editor del Press Kit — Sveltia CMS
+#  El cliente edita textos, fotos y videos desde /admin.
+#  Al guardar, se commitea a este repo y GitHub Pages
+#  republica el sitio automáticamente.
+# =========================================================
+
+backend:
+  name: github
+  repo: Fitoplancton23/Hugo-Dellana      # <-- tu repo (usuario/repo)
+  branch: main
+  # base_url = URL del worker de OAuth (Cloudflare)
+  base_url: https://sveltia-cms-auth.studio-conecta-gestion.workers.dev
+
+# Idioma de la interfaz
+locale: es
+
+# Las fotos nuevas se suben acá (mismo lugar que las actuales)
+media_folder: "assets/photos"
+public_folder: "assets/photos"
+
+collections:
+  - name: contenido
+    label: "Contenido del presskit"
+    description: "Editá los textos, la galería de fotos y los videos. Guardá para publicar."
+    files:
+      - name: presskit
+        label: "Presskit"
+        file: "content.json"
+        editor:
+          preview: false
+        fields:
+          - label: "Biografía"
+            name: bio
+            label_singular: "Párrafo"
+            widget: list
+            field: { label: "Párrafo", name: texto, widget: text }
+
+          - label: "Videos de YouTube"
+            name: videos
+            label_singular: "Video"
+            widget: list
+            summary: "{{fields.youtube}}"
+            fields:
+              - { label: "Título (opcional)", name: title, widget: string, required: false }
+              - { label: "YouTube (link o ID)", name: youtube, widget: string, hint: "Pegá el link del video de YouTube (o su ID de 11 caracteres)" }
+
+          - label: "Galería de fotos"
+            name: galeria
+            label_singular: "Foto"
+            widget: list
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: "Foto", name: src, widget: image }
+              - { label: "Descripción (texto alternativo)", name: alt, widget: string, required: false }
+              - { label: "Ancho en px (opcional)", name: w, widget: number, required: false, value_type: int }
+              - { label: "Alto en px (opcional)", name: h, widget: number, required: false, value_type: int }
+
+          - label: "Próximas fechas"
+            name: fechas
+            label_singular: "Fecha"
+            widget: list
+            summary: "{{fields.fecha}} — {{fields.evento}}"
+            fields:
+              - { label: "Fecha (DD.MM)", name: fecha, widget: string, required: false }
+              - { label: "Evento", name: evento, widget: string, required: false }
+              - { label: "Ciudad", name: ciudad, widget: string, required: false }
+              - { label: "Estado", name: estado, widget: select, options: ["Entradas", "Sold out", "Free"], required: false, default: "Entradas" }
